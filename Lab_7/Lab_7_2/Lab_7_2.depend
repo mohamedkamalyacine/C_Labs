@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1667939440 source:d:\iti_data\c_programming\lab_7_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"EmployeeIO.h"
+	"menu.h"
+
+1667939490 source:d:\iti_data\c_programming\lab_7_2\employeeio.c
+	<stdio.h>
+	<stdlib.h>
+	"EmployeeIO.h"
+
+1667939417 d:\iti_data\c_programming\lab_7_2\employeeio.h
+
+1667678742 source:d:\iti_data\c_programming\lab_7_2\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	"EmployeeIO.h"
+
+1667678571 d:\iti_data\c_programming\lab_7_2\menu.h
+

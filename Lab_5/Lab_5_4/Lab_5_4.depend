@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1667680071 source:d:\iti_data\c_programming\lab_5_4\employeeio.c
+	<stdio.h>
+	<stdlib.h>
+	"EmployeeIO.h"
+
+1667716486 d:\iti_data\c_programming\lab_5_4\employeeio.h
+
+1667678742 source:d:\iti_data\c_programming\lab_5_4\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	"EmployeeIO.h"
+
+1667712238 source:d:\iti_data\c_programming\lab_5_4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	"EmployeeIO.h"
+	"menu.h"
+
+1667678571 d:\iti_data\c_programming\lab_5_4\menu.h
+
+1667716486 source:d:\iti_data\c_programming\lab_5\lab_5_4\employeeio.c
+	<stdio.h>
+	<stdlib.h>
+	"EmployeeIO.h"
+
+1667716486 d:\iti_data\c_programming\lab_5\lab_5_4\employeeio.h
+
+1667716338 source:d:\iti_data\c_programming\lab_5\lab_5_4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	"EmployeeIO.h"
+	"menu.h"
+
+1667678571 d:\iti_data\c_programming\lab_5\lab_5_4\menu.h
+
+1667678742 source:d:\iti_data\c_programming\lab_5\lab_5_4\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	"EmployeeIO.h"
+

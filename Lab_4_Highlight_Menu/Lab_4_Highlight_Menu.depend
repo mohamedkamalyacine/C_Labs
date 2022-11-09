@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1667760518 source:d:\iti_data\c_programming\lab_4_highlight_menu\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	"selections.h"
+
+1667674072 d:\iti_data\c_programming\lab_4_highlight_menu\selections.h
+
+1667674608 source:d:\iti_data\c_programming\lab_4_highlight_menu\selections.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	"selections.h"
+

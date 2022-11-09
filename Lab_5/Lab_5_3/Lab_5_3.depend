@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1667677711 source:d:\iti_data\c_programming\lab_5_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	"EmployeeIO.h"
+
+1667663467 d:\iti_data\c_programming\lab_5_3\employeeio.h
+
+1667663528 source:d:\iti_data\c_programming\lab_5_3\employeeio.c
+	<stdio.h>
+	<stdlib.h>
+	"EmployeeIO.h"
+

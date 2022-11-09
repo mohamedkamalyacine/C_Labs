@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1668028337 source:d:\iti_data\c_programming\lab_6_text_editor\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
