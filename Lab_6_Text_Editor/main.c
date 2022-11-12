@@ -5,17 +5,15 @@
 void textattr(int ForgC);
 void gotoxy(int x,int y);
 void backSpace(void);
-//void writeFromStart(char *, int);
 
 int main()
 {
-    char c = 0;
-    int i =0, j=0, step = 0;
+    char c = 0, temp = 0;
+    int i =0, j=0, step = 0, vertical = 0, newStep =0;
     char text[400] = {'\0'};
 
-    while(13 != c)
+    while(27 != c)
     {
-        //step++;
         c=getch();
         if(-32==c)
         {
@@ -23,12 +21,18 @@ int main()
             switch(c)
             {
             case 75:
-                step--;
-                gotoxy(step,0);
+                if(step != 0)
+                {
+                    step--;
+                    gotoxy(step,0);
+                }
                 break;
             case 77:
-                step++;
-                gotoxy(step, 0);
+                if(step<i)
+                {
+                    step++;
+                    gotoxy(step, 0);
+                }
                 break;
             case 71:
                 step = 0;
@@ -38,88 +42,84 @@ int main()
                 step = i;
                 gotoxy(step,0);
                 break;
+            case 80:
+                if(vertical != 0)
+                {
+                    vertical++;
+                    gotoxy(i,vertical);;
+                }
+                break;
             default:
                 break;
             }
         }
-        else if(8==c && 0!=i)
+        else if(8==c && 0!=i && step==i)
         {
             step--;
             i--;
             gotoxy(step, 0);
             text[i] = ' ';
             printf(" \b");
-            /*if(step<i)
-            {
-                for(j=step; j<i; j++)
-                {
-                    printf("%c", text[j]);
-                }
-            }*/
-            //gotoxy(step, 0);
-            //putch(text[i]);
-            //i--;
-
         }
-        else if((c>='a' && c<='z') || (c>='A' && c<='Z') || (c>='0' && c<='9'))
-        {
-            text[i] = c;
-            //gotoxy(step, 0);
-            printf("%c", text[i]);
-            i++;
-            step++;
-        }
-        /*if( (c>='a' && c<='z') || (c>='A' && c<='Z'))
-        {
-            printf("etghjk");
-            text[i] = c;
-            step++;
-            i++;
-        }*/
-        /*else if(c==-32)
-        {
-            switch(c)
-            {
-            case :
-                //writeFromStart(text, i-1);
-                //printf("Home Key is pressed\n");
-                //text[i] = '\0';
-                break;
-            default:
-                break;
-            }
-        }*/
-        /*else if(c==8)
+        else if(8==c && step<i && step>0)
         {
             step--;
-            i--;
             gotoxy(step,0);
-            text[step] = ' ';
-            //printf("KKKKKKKKK");
-
-            printf("%c", text[step]);
+            for(j=step; j<=i; j++)
+            {
+                text[j] = text[j+1];
+                printf("%c", text[j]);
+            }
+            gotoxy(step,0);
         }
-        //i++;
-        step++;*/
-
+        else if(13==c)
+        {
+            newStep = 0;
+            vertical++;
+            gotoxy(newStep, vertical);
+        }
+        else if( (i==step) && (c>='a' && c<='z') || (c>='A' && c<='Z') || (c>='0' && c<='9') || (c==' '))
+        {
+            if(vertical != 0)
+            {
+                text[i] = c;
+                gotoxy(newStep, vertical);
+                printf("%c", text[i]);
+                i++;
+                step++;
+                newStep++;
+            }
+            else
+            {
+                text[i] = c;
+                gotoxy(step, vertical);
+                printf("%c", text[i]);
+                i++;
+                step++;
+            }
+        }
+        else if( (step<i) && (c>='a' && c<='z') || (c>='A' && c<='Z') || (c>='0' && c<='9') || (c==' '))
+        {
+            for(j=i; j!=step; j--)
+            {
+                text[j+1] = text[j];
+            }
+            text[j+1] = c;
+            system("cls");
+            printf("%s", text);
+            gotoxy(step, 0);
+            step++;
+            i++;
+        }
     }
-    printf("\n%s\n", text);
-    //gotoxy(50,5);
-    //printf("\nYou entered:\n");
-    //gotoxy(50,6);
-    /*for(j=0; '\0'!=text[j]; j++)
+    printf("\n");
+    for(i=0; text[i] != '\0'; i++)
     {
-        printf("%c", text[j]);
+        printf("%c", text[i]);
     }
-    printf("\n");*/
-
+    printf("\n");
     return 0;
 }
-
-/*void writeFromStart(char *ptrText, int k)
-{
-
-}*/
 
 void gotoxy(int x,int y)
 {

@@ -4,7 +4,7 @@
 int main()
 {
     int studentNum = 0, subjectNum = 0, i=0, j=0;
-    int sum = 0;
+    int sum = 0, sumAvg=0;
     float avg = 0;
 
     int** student;
@@ -34,9 +34,6 @@ int main()
         printf("================================================\n");
     }
 
-    int sumAvg[subjectNum];
-    sumAvg[subjectNum] = (int)malloc(subjectNum*sizeof(int));
-
     for(i=0; i<studentNum; i++)
     {
         printf("\nStudent %d Data:\n", i+1);
@@ -44,70 +41,20 @@ int main()
         {
             printf("Subject %d : %d\n", j+1, student[i][j]);
             sum = sum + student[i][j];
-            //printf("sumAvg[%d] = %d\n", i, sumAvg[j]);
         }
         printf("Final Result: %d\n", sum);
         sum = 0;
     }
 
-    //int sumAvg=0;
-    //i=0; j=0;
-
-    /*while(j<subjectNum)
+    for(j=0; j<subjectNum; j++)
     {
-        sumAvg = sumAvg + student[i][j];
-        if(i==studentNum)
+        for(i=0; i<studentNum; i++)
         {
-            avg = (float)sumAvg/studentNum;
-            printf("Average of Subject %d: %f", j+1, avg);
-            i=0;
-            j++;
+            sumAvg = sumAvg + student[i][j];
         }
-        else
-            i++;
-    }*/
-    /*for(j=0; j<subjectNum; j++)
-    {
-        sumAvg = sumAvg + student[i][j];
-        if(i==studentNum)
-        {
-            avg = (float)sumAvg/studentNum;
-            printf("Average of Subject %d: %f", j+1, avg);
-            i=0;
-            j++;
-        }
-        else
-            i++;
-    }*/
-    /*int row = 0, col = 0, i = 0, j = 0;
-    printf("Enter number of rows: ");
-    scanf("%d", &row);
-
-    printf("Enter number of columns: ");
-    scanf("%d", &col);
-
-    int **ptr = (int**)malloc(row*sizeof(int*));
-
-    for(i=0; i<row; i++)
-    {
-        ptr[i] = (int*)malloc(col*sizeof(int));
+        avg = (float)sumAvg/studentNum;
+        printf("Average of Subject %d --> %0.2f\n", j, avg);
+        sumAvg = 0;
     }
-
-    for(i=0; i<row; i++)
-    {
-        for(j=0; j<col; j++)
-        {
-            printf("Element [%d][%d]: ", i, j);
-            scanf("%d", &ptr[i][j]);
-        }
-    }
-
-    for(i=0; i<row; i++)
-    {
-        for(j=0; j<col; j++)
-        {
-            printf("Element [%d][%d]: %d\n", i, j, ptr[i][j]);
-        }
-    }*/
     return 0;
 }
